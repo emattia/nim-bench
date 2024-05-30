@@ -11,7 +11,7 @@ class OpenAITaskSet(TaskSet):
         data = {
             "model": "meta-llama3-8b-instruct",
             "prompt": "Once upon a time",
-            "max_tokens": 200
+            "max_tokens": 100
         }
         self.client.post("/v1/completions", json=data, headers=headers)
 
