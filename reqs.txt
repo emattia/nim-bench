@@ -1,0 +1,6 @@
+locust
+openai
+boto3
+transformers 
+ipywidgets
+pandas
