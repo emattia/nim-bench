@@ -10,7 +10,7 @@ class GenerationTaskSet(TaskSet):
             'Content-Type': 'application/json',
         }
         data = {
-            "model": "meta-llama3-8b-instruct",
+            "model": "meta-llama3-70b-instruct",
             "prompt": "Once upon a time",
             "max_tokens": 100
         }

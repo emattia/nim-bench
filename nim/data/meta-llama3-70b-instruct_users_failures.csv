@@ -1,0 +1,3 @@
+Method,Name,Error,Occurrences
+POST,/v1/completions,"OSError(24, 'Too many open files')",9
+POST,/v1/completions,RemoteDisconnected('Remote end closed connection without response'),2
