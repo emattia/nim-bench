@@ -1,5 +1,6 @@
 import wikipedia
 import os
+from constants import DOCUMENTS_DIR
 
 search_terms = [
     "Barack Obama",
@@ -11,7 +12,7 @@ search_terms = [
     "The Office",
     "Fermat's Last Theorem",
     "The Grand Canyon",
-    "Pittsburgh"
+    "Pittsburgh",
     "The Mona Lisa",
     "The Eiffel Tower",
     "Jane Austen",
@@ -31,7 +32,9 @@ search_terms = [
 
 def download_sample(term):
     key = term.replace(" ", "_").lower()
-    if os.path.exists(f"data/{key}.txt"):
+    if os.path.exists(
+        os.path.join(DOCUMENTS_DIR, f"{key}.txt")
+    ):
         print(f"Already have {term}")
         return
     try:
@@ -42,10 +45,12 @@ def download_sample(term):
     except wikipedia.exceptions.DisambiguationError:
         print(f"Disambiguation error for {term}")
         return
-    with open(f"data/{key}.txt", "w") as f:
+    with open(os.path.join(DOCUMENTS_DIR, f"{key}.txt"), "w") as f:
         f.write(page.content)
     return
 
 if __name__ == '__main__':
+    if not os.path.exists(DOCUMENTS_DIR):
+        os.makedirs(DOCUMENTS_DIR)
     for term in search_terms:
         download_sample(term)
