@@ -93,12 +93,12 @@ You can test it with
 ## Run a single trial
 Run with 2 concurrent threads, each sending 1 request that the NIM model should respond to with in 100 or less tokens.
 ```
-python3 main.py -m 2 -n 1 -t 100
+python3 trial.py -m 2 -n 1 -t 100
 ```
 
 Run with 5 concurrent threads, each sending 100 request that the NIM model should respond to with in 500 or less tokens.
 ```
-python3 main.py -m 5 -n 100 -t 500
+python3 trial.py -m 5 -n 100 -t 500
 ```
 
 ## Run an experiment
